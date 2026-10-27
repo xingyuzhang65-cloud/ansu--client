@@ -1,0 +1,6 @@
+/* The reference modules are hosted locally inside the NSU workspace. */
+html,body{font-family:Arial,"Microsoft YaHei","PingFang SC",sans-serif;background:#f0f2f5}
+.bg-\[\#0759b6\]{background-color:#1890ff}.text-\[\#0759b6\]{color:#1890ff}.border-\[\#0759b6\]{border-color:#1890ff}.accent-\[\#0759b6\]{accent-color:#1890ff}
+button.bg-\[\#0759b6\]:hover{background-color:#40a9ff}
+.oi-page-title{color:#545b65}
+@media(max-width:650px){main[aria-label="指令列表"]>section:first-child>.grid{grid-template-columns:repeat(2,minmax(0,1fr))}main[aria-label="指令列表"]>section:first-child{max-height:42vh;overflow:auto}}

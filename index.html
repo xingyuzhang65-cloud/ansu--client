@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="NSU 安速物流运单管理工作台"><title>运单管理 · NSU 安速物流</title>
+  <link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./modules.css"><script src="./app.js" defer></script><script src="./modules.js" defer></script>
+</head>
+<body>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 21v-3a7 7 0 0 1 14 0v3"/></symbol>
+<symbol id="people" viewBox="0 0 24 24"><circle cx="10" cy="7" r="3"/><path d="M4 20v-3a6 6 0 0 1 12 0v3M17 5a3 3 0 0 1 0 6m2 9v-3a6 6 0 0 0-3-5"/></symbol>
+<symbol id="chevron" viewBox="0 0 24 24"><path d="m8 4 8 8-8 8"/></symbol>
+<symbol id="down" viewBox="0 0 24 24"><path d="m5 9 7 7 7-7"/></symbol>
+<symbol id="menu" viewBox="0 0 24 24"><path d="M3 5h18M3 12h18M3 19h18"/></symbol>
+<symbol id="bell" viewBox="0 0 24 24"><path d="M5 17h14l-2-3V9a5 5 0 0 0-10 0v5l-2 3ZM10 21h4M12 2v2"/></symbol>
+<symbol id="help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1.5 1-1.5 1.5-1.5 3M12 17h.01"/></symbol>
+<symbol id="settings" viewBox="0 0 24 24"><path d="m9 3-1 3-3 1-2 5 2 5 3 1 1 3h6l1-3 3-1 2-5-2-5-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M8 2v6M16 2v6M4 11h16"/></symbol>
+<symbol id="grid" viewBox="0 0 24 24"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM18 14v8M14 18h8"/></symbol>
+<symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+</defs></svg>
+<aside class="sidebar">
+  <a class="brand" href="./" aria-label="安速物流首页"><svg width="30" height="30" viewBox="0 0 34 32"><path d="m3 22 8-10 6 13h13" fill="none" stroke="#e7342c" stroke-width="4" stroke-linejoin="round"/><path d="m10 12 4-7 8 17" fill="none" stroke="#e7342c" stroke-width="4" stroke-linecap="round"/><path d="m5 25 5-5" stroke="#e9b822" stroke-width="3"/></svg><span><strong>NSU</strong><b>安速物流<small>NSU LOGISTICS</small></b></span></a>
+  <nav aria-label="主导航">
+    <button data-nav="预报下单"><svg><use href="#people"/></svg><span>预报下单</span></button>
+    <button data-nav="快捷下单"><svg><use href="#people"/></svg><span>快捷下单</span></button>
+    <button data-nav="预报管理"><svg><use href="#people"/></svg><span>预报管理</span></button>
+    <button class="active" data-nav="运单管理"><svg><use href="#people"/></svg><span>运单管理</span></button>
+    <button data-nav="暂存管理"><svg><use href="#people"/></svg><span>暂存管理</span></button>
+    <button data-nav="指令列表"><svg><use href="#people"/></svg><span>指令列表</span></button>
+    <button data-nav="预警管理"><svg><use href="#people"/></svg><span>预警管理</span></button>
+    <button data-nav="沃尔玛管理"><svg><use href="#user"/></svg><span>沃尔玛管理</span><svg class="nav-down"><use href="#down"/></svg></button>
+    <div class="subnav" hidden><button data-nav="沃尔玛运单">沃尔玛运单</button><button data-nav="沃尔玛仓库">沃尔玛仓库</button></div>
+    <button data-nav="我的反馈"><svg><use href="#user"/></svg><span>我的反馈</span></button>
+  </nav>
+  <button class="collapse-bottom icon-button" aria-label="收起侧栏"><svg><use href="#chevron"/></svg></button>
+</aside>
+<header class="header">
+  <div class="header-top"><div class="main-nav"><button class="selected" data-top="单据管理">单据管理</button><button data-top="配置中心">配置中心</button></div><div class="account"><button class="icon-button blue" id="help" aria-label="帮助"><svg><use href="#help"/></svg></button><button class="icon-button" id="notifications" aria-label="通知"><svg><use href="#bell"/></svg><i class="notice-dot" hidden></i></button><button id="account" class="account-button"><span class="avatar"><svg><use href="#user"/></svg></span><span>测试1</span></button></div></div>
+  <div class="page-tabs"><button class="icon-button" id="collapse" aria-label="展开或收起侧栏"><svg><use href="#menu"/></svg></button><button class="tab-back icon-button" aria-label="滚动页签"><svg><use href="#chevron"/></svg></button><div class="workspace-tabs"><button data-workspace="预报下单">预报下单 <span class="tab-close">×</span></button><button data-workspace="快捷下单">快捷下单 <span class="tab-close">×</span></button><button data-workspace="预报管理">预报管理 <span class="tab-close">×</span></button><button class="active" data-workspace="运单管理">运单管理 <span class="tab-close">×</span></button><button data-workspace="我的反馈">我的反馈 <span class="tab-close">×</span></button></div><button class="tab-forward icon-button" aria-label="滚动页签"><svg><use href="#chevron"/></svg></button></div>
+</header>
+<main id="waybill-view">
+ <section class="filter-panel" aria-label="运单查询"><form id="filters"><div class="filter-grid" id="filter-grid"></div><div class="filter-actions"><button type="submit" class="primary search">搜 索</button><button type="reset" class="secondary">重 置</button><span id="filter-note" aria-live="polite"></span></div></form></section>
+ <section class="table-panel" aria-label="运单列表">
+   <div class="status-tabs" role="tablist" aria-label="运单状态" id="status-tabs"></div>
+   <div class="toolbar"><div class="toolbar-actions"><div class="dropdown"><button class="primary" data-menu="batch-menu">批量操作 <svg><use href="#down"/></svg></button><div class="dropdown-menu" id="batch-menu" hidden><button data-action="入仓">批量入仓</button><button data-action="运输">标记运输中</button><button data-action="签收">标记已签收</button><button data-action="恢复">恢复已下单</button></div></div><button class="primary" id="invoice">制作发票</button><button class="primary" id="cancel">取消运单</button><div class="dropdown"><button class="primary" data-menu="export-menu">导出 <svg><use href="#down"/></svg></button><div class="dropdown-menu" id="export-menu" hidden><button data-export="all">导出当前结果</button><button data-export="selected">导出所选运单</button></div></div><div class="dropdown"><button class="primary" data-menu="label-menu">标签管理 <svg><use href="#down"/></svg></button><div class="dropdown-menu" id="label-menu" hidden><button data-label="优先处理">添加优先处理标签</button><button data-label="重点关注">添加重点关注标签</button><button data-label="">清除标签</button></div></div><button class="primary" id="print">打印入仓单</button><span id="selection-note"></span></div><button class="primary settings-button" id="column-settings" aria-label="表格列设置"><svg><use href="#settings"/></svg></button></div>
+   <div class="table-scroll"><table id="waybill-table"><colgroup id="colgroup"></colgroup><thead id="table-head"></thead><tbody id="table-body"></tbody></table><div class="empty-state" hidden><svg viewBox="0 0 80 60"><path d="M14 20h52v30H14zM14 20 26 7h28l12 13M14 29h17l4 7h10l4-7h17"/></svg><span>暂无符合条件的运单</span><button id="clear-empty">清空筛选条件</button></div></div>
+   <footer class="pagination"><span id="total-count">共 2 条</span><button id="previous-page" class="icon-button" aria-label="上一页" disabled><svg><use href="#chevron"/></svg></button><button class="page-number" aria-label="第 1 页">1</button><button id="next-page" class="icon-button" aria-label="下一页" disabled><svg><use href="#chevron"/></svg></button><select id="page-size" aria-label="每页条数"><option value="100">100 条/页</option><option value="20">20 条/页</option><option value="10">10 条/页</option></select></footer>
+ </section>
+</main>
+<section id="overseas-view" class="overseas-view" aria-label="海外业务页面" hidden>
+  <div id="module-loading" class="module-loading" role="status"><span class="loading-spinner"></span><span id="module-loading-text">正在加载页面…</span><button id="module-retry" class="secondary" hidden>重新加载</button></div>
+  <iframe id="overseas-frame" title="暂存管理" src="about:blank"></iframe>
+</section>
+<div class="watermark" aria-hidden="true"></div>
+<div class="floating-tools"><button id="shortcuts" aria-label="快捷工具"><svg><use href="#grid"/></svg></button><button id="language" aria-label="语言设置"><span>文<small>A</small></span></button></div>
+<div id="toast" role="status" hidden></div>
+<dialog id="dialog"><div class="dialog-heading"><h2 id="dialog-title"></h2><button class="icon-button" id="dialog-close" aria-label="关闭"><svg><use href="#close"/></svg></button></div><div id="dialog-content"></div><div id="dialog-footer"></div></dialog>
+</body></html>

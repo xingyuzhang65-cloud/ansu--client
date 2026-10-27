@@ -1,0 +1,2 @@
+# Preserve generated assets, including intentional PDF xref whitespace.
+overseas-app/assets/* -text -whitespace
